@@ -1,1 +1,3 @@
 Pradyoth Kommareddy
+I had a long history with computer science background as i did my under graduation in computer science department. The strong basics of usage of computer allways encouraged me to go deep in the subject like how it works, what language does it understand and how the system perform. The courses which i took in under-graduation helped me learn languages like java and python. I did two major projects, where first project was based on python and the second project was based on machine learning and data minning.
+After learning in basics in under graduation, which allowed me to take computer science as my major here in master science graduate school.In six months, I took three courses which were data base management, data structures and computer networks.
