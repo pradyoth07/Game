@@ -7,7 +7,7 @@ import { NavComponent } from './nav/nav.component';
 import { MessagesComponent } from './messages/messages.component';
 import { HomeComponent } from './home/home.component';
 import { GameComponent } from './game/game.component';
-import { LoopComponent } from './loop/loop.component';
+import { ProComponent } from './pro/pro.component';
 
 
 @NgModule({
@@ -17,13 +17,14 @@ import { LoopComponent } from './loop/loop.component';
     MessagesComponent,
     HomeComponent,
     GameComponent,
-    LoopComponent,
+    ProComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot([
         { path: 'home', component: HomeComponent },
         { path: 'game', component: GameComponent },
+        { path: 'pro', component: ProComponent },
         { path: '', redirectTo: '/home', pathMatch: 'full'}
     ])
   ],
