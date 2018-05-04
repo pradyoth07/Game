@@ -1,0 +1,249 @@
+/* ======= Variables: Background Colors ======== */
+$part1-BC: #96858F; /* Dusty */
+$part2-BC: #6D7993; /* Lavendor */
+$part3-BC: #9099A2; /* Overcast */
+$partHeaderFooter-BC: #D5D5D5; /* Paper */
+
+/* ======== Variables: Colors ========= */
+$parts-C: #FFF; /* white */
+$partHeaderFooter-C: #000; /* black */
+
+
+
+/* ========= BC & C for the page ========== */
+#header, #footer{
+  background-color: $partHeaderFooter-BC;
+  color: $partHeaderFooter-C;
+}
+
+.part1 {
+  background-color: $part1-BC;
+  color: $parts-C;
+}
+.part2 {
+  background-color: $part2-BC;
+  color: $parts-C;
+}
+.part3 {
+  background-color: $part3-BC;
+  color: $parts-C;
+}
+
+/* ======== General ========= */
+body{
+ p{
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+}
+.paddingTopBottom60px{
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+/* ======== Sticky header ========= */
+#header{
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+}
+
+
+/* ======== Place the title and the main-menu ======== */
+#title{
+  text-align: left;
+  padding-left: 20px;
+  z-index:2;
+}
+#main-menu{
+  text-align: right;
+  padding-right: 20px;
+  padding-top: 0px; 
+  z-index: 2;
+  
+  ul{
+    list-style-type: none; /* to make the bullets disappear */      
+  }
+  
+  li {
+    float: right;
+    
+    a {
+    display: block;
+    color: $partHeaderFooter-C;
+    text-decoration: none;
+    padding: 15px;
+      
+    }  
+  }
+  
+  @media (min-width: 870px) {
+  /* this rule apply for screens 870px and bigger */
+    margin-top: -40px; 
+  }  
+}
+
+/* hover animation for main-menu*/
+#targetMainMenu1:hover{
+  background-color: $part1-BC; 
+  display:inline;
+  padding-top: 15px;
+  padding-bottom: 15px; 
+}
+#targetMainMenu2:hover{
+  background-color: $part2-BC;
+  display:inline;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+#targetMainMenu3:hover{
+  background-color: $part3-BC;
+  display:inline;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+
+/* ============== Part 1 - BMR =========== */
+/* making the first part - BMR responsive  * 
+ * so as not to crush in the sticky header */
+#BMR{
+  padding-top: 60px;
+  margin-top: 245px;
+  
+   @media (min-width: 333px) {
+    margin-top: 205px;
+  }
+  
+  @media (min-width: 380px) {
+    margin-top: 150px;
+  }
+  
+  @media (min-width: 530px) {
+    margin-top: 110px;
+  }
+  
+  @media (min-width: 870px) {
+    margin-top: 78px;
+  }
+}
+
+
+/* =========== Calculate BMR style ============ */
+input{
+  background-color: $partHeaderFooter-BC;
+  color: $partHeaderFooter-C;
+}
+legend{
+  background-color: initial;
+}
+
+/* =========== Activity Factor Multuplier ============= */
+
+
+.foodImg {
+  display: block;
+  margin: 0 auto;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 30px;
+  
+  @media (min-width: 690px) {
+    padding-top: 10px;
+  }
+  
+  @media (min-width: 760px) {
+    padding-top: 0px; 
+    display: block;
+    margin: 0 auto;
+  }
+  
+  @media (min-width: 1000px){
+    display: inline-block;
+  }
+}
+
+.paddingTop3columnsForCol-xs-4 {
+  padding-top: 30px;
+  
+  @media (min-width: 760px){
+    padding-top: 50px;
+  }
+  @media (min-width: 930px){
+    padding-top: 80px;
+  }
+   @media (min-width: 1100px){
+    padding-top: 90px;
+  }
+}
+
+.paddingBottom40px{
+  padding-bottom: 40px;
+}
+
+/* =========== Flip  the images ============ */
+
+/* entire container, keeps perspective */
+.flip-container {
+	perspective: 1000px;
+}
+	/* flip the pane when hovered */
+	.flip-container:hover .flipper, .flip-container.hover .flipper {
+		transform: rotateY(180deg);
+	}
+
+.flip-container, .front, .back {
+	width: auto; /* was 320px */
+	height: auto; /*was 480px */
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+  
+  @media(min-width: 1000px){
+    padding-left: 20%;
+  }
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(180deg);
+}
+
+.backSide30pxDown{
+  padding-top: 30px;
+}
+
+
+
+/* =========== FOOTER =========== */
+/*   hover animation for footer   */
+#footer{
+  a:link {
+    color: $partHeaderFooter-C;
+  }
+  a:visited{
+    color: $part1-BC;
+  }
+  a:hover{
+    color: $part2-BC;
+  }
+}
