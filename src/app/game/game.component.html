@@ -1,59 +1,68 @@
-<div class="row" >
-    <div class="col-md-4">
-        
-        <div class="card" >
-            <div class="card-header">My Quotes ({{Me.Name}}) </div>
-            <ul class="list-group list-group-flush my-quotes">
-                <li *ngFor="let quote of Me.MyQuotes" 
-                    (click)="submitQuote($event, quote)"
-                    [ngClass]="{ enabled: !MyPlayedQuote() && !IAmTheDealer() }"
-                    class="list-group-item" >
-                    {{quote}}
-                </li>
-            </ul>
-          </div>
-    </div>
-    <div class="col-md-8">
-        <div class="card bg-success mb-3" >
-            <div class="card-header text-white">Played Quotes</div>
-                <ul class="list-group list-group-flush ">
-                    <li *ngFor="let quote of Model.PlayedQuotes"
-                        [ngClass]="{ 'list-group-item-success': quote.Chosen }"
-                        class="list-group-item d-flex justify-content-between align-items-center ">
-                        {{quote.Text}}
-                        <span *ngIf="!IsEveryoneDone() || (!IAmTheDealer() && !ChosenQuote())" class="badge badge-light">hidden</span>
-                        <span *ngIf="ChosenQuote()" class="badge badge-primary">{{quote.PlayerId}}</span>
-                        <button *ngIf="IsEveryoneDone() && IAmTheDealer() && !ChosenQuote()"
-                                (click)="chooseQuote($event, quote)"
-                                class="btn btn-sm btn-primary">
-                                Choose
-                        </button>
-                    </li>
-                </ul>
-            </div>
-            
-            <div class="card">
-                <img class="card-img" *ngIf="Model.Picture" [src]="Model.Picture.url" />
-                <div class="card-img-overlay" style="text-align: center">
-                    <button class="btn btn-success btn-lg" 
-                            (click)="flipPicture($event)"
-                            *ngIf="IAmTheDealer() && (Model.PlayedQuotes.length == 0 || ChosenQuote())">Flip the Picture</button>
-                </div>
-            </div>
-    </div>
-    <div class="col-md-4">
-        
-        <div class="card" >
-            <div class="card-header">Other Players</div>
-            <ul class="list-group list-group-flush">
-                <li *ngFor="let player of Model.Players" class="list-group-item">
-                    <img style="height: 16px; width: 16px" class="rounded">
-                    {{player.Name}}
-                    <i class="badge float-right" [ngClass]="player.PlayerId == Model.DealerId ? 'badge-warning' : 'badge-info'">
-                        {{player.Score}}
-                    </i>
-                </li>
-            </ul>
-        </div>
-    </div>
-</div>
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div class="row">
+		<div class="col-md-4">
+			<div class="card">
+				<div class="card-header">
+					My Stats ({{Me.Name}})
+				</div>
+				<div class="list-group list-group-flush my-quotes" style="margin-left: 2em">
+					<div>
+						<form novalidate="">
+							<p>Workout Inputs</p>
+							<div class="form-group">
+								<label for="gender">Gender:</label> <input name="gender" required="">
+							</div>
+							<div class="form-group">
+								<label for="age">Age:</label> <input name="age" required="">
+							</div>
+							<div class="form-group">
+								<label for="height">Height:</label> <input name="height" required="">
+							</div>
+							<div class="form-group">
+								<label for="weight">Weight:</label> <input name="weight" required="">
+							</div>
+							<div class="form-group">
+								<label for="activities">Favorite Activities:</label> <input name="activities" required="">
+							</div>
+							<p></p><button>Save</button>
+						</form>
+					</div>
+					<p>Gender: {{ gender.value }}</p>
+					<p>Age: {{ age.value }}</p>
+					<p>Height: {{ height.value }}</p>
+					<p>Weight: {{ weight.value }}</p>
+					<p>Favorite Activities: {{ activities.value }}</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-8">
+			<div class="card mb-3">
+				<div class="card-header text-black">
+					My Workouts
+				</div><!--<ul class="list-group list-group-flush ">
+                    <ul>{{model.id}}</ul>
+                    <ul>{{model.date}}</ul>
+                    <ul>{{model.exercise}}</ul>
+                    <ul>{{model.duration}}</ul>
+                    <ul>{{model.notes}}</ul>
+                </ul>-->
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="card">
+				<div class="card-header">
+					Other Users
+				</div>
+				<ul class="list-group list-group-flush">
+					<li class="list-group-item"><img class="rounded" style="height: 16px; width: 16px"> {{player.Name}}</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
