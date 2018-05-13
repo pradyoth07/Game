@@ -12,6 +12,7 @@ import { MessagesService } from './services/messages.service';
 import { GameService } from './services/game.service';
 import { LoginComponent } from './login/login.component';
 import { CaloriesComponent } from './calories/calories.component';
+import { TrackComponent } from './track/track.component';
 
 
 
@@ -23,7 +24,8 @@ import { CaloriesComponent } from './calories/calories.component';
     HomeComponent,
     GameComponent,
     LoginComponent,
-    CaloriesComponent
+    CaloriesComponent,
+    TrackComponent
   ],
   imports: [
     BrowserModule,
@@ -33,6 +35,7 @@ import { CaloriesComponent } from './calories/calories.component';
         { path: 'game', component: GameComponent },
         { path: 'login', component: LoginComponent },
         { path: 'calories', component: CaloriesComponent },
+        { path: 'track', component: TrackComponent },
         { path: '', redirectTo: '/home', pathMatch: 'full'}
     ])
   ],
