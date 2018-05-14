@@ -1,4 +1,1 @@
-# 2018Spring
-
-## Second Class
-We are learning about editors and relationships between files.
+Typeahead file has few errors and was effecting whole app, so did not commit changes!! 
